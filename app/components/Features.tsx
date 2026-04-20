@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import { useState } from "react";
 
 const features = [
   {
@@ -17,7 +21,6 @@ const features = [
     phoneBottom: -200,
     phoneRotate: -32,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
   {
     icon: "/assets/icon-tap.svg",
@@ -35,13 +38,12 @@ const features = [
     phoneBottom: -200,
     phoneRotate: 32,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
   {
     icon: "/assets/icon-game.svg",
     title: "Game Profiles & Auto-Detection",
     description:
-      "Launch a game — LagOff.ai detects it instantly and applies the optimal profile. Support for 200+ games.",
+      "Launch a game — HyperUp detects it instantly and applies the optimal profile. Support for 200+ games.",
     color: "#a15c07",
     bg: "#fefbe8",
     position: "left" as const,
@@ -53,13 +55,12 @@ const features = [
     phoneBottom: -200,
     phoneRotate: 0,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
   {
     icon: "/assets/icon-global.svg",
     title: "Global Server Network",
     description:
-      "50+ countries with nodes next to game data centers. LagOff.ai automatically finds the closest one for you.",
+      "50+ countries with nodes next to game data centers. HyperUp automatically finds the closest one for you.",
     color: "#0e7090",
     bg: "#ecfdff",
     position: "right" as const,
@@ -71,7 +72,6 @@ const features = [
     phoneBottom: -100,
     phoneRotate: -16,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
   {
     icon: "/assets/icon-shield.svg",
@@ -89,13 +89,12 @@ const features = [
     phoneBottom: -75,
     phoneRotate: 0,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
   {
     icon: "/assets/icon-stats.svg",
     title: "Real Stats, Real Results",
     description:
-      "Your personal dashboard: ping reduction, saved packets, lag-free hours. See exactly how LagOff.ai improves your game.",
+      "Your personal dashboard: ping reduction, saved packets, lag-free hours. See exactly how HyperUp improves your game.",
     color: "#363f72",
     bg: "#f8f9fc",
     position: "right" as const,
@@ -107,69 +106,82 @@ const features = [
     phoneBottom: -100,
     phoneRotate: 16,
     phoneScale: 1.5,
-    hoverRotate: 1.12,
   },
 ];
+
+function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const rotate = isHovered ? feature.phoneRotate + 5 : feature.phoneRotate;
+
+  const scale = isHovered ? feature.phoneScale + 0.05 : feature.phoneScale;
+
+  return (
+    <div
+      className="absolute overflow-hidden rounded-[16px] p-[24px]"
+      style={{
+        backgroundColor: feature.bg,
+        width: 628,
+        height: feature.height,
+        left: feature.position === "left" ? 0 : 652,
+        top: feature.top,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative z-10 flex max-w-[560px] flex-col gap-[20px]">
+        <div className="flex items-center gap-[10px]">
+          <div className="relative h-[32px] w-[32px] shrink-0">
+            <Image src={feature.icon} alt="" fill />
+          </div>
+
+          <h3
+            className="text-[36px] font-semibold leading-[44px] tracking-[-0.72px]"
+            style={{
+              fontFamily:
+                "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
+              color: feature.color,
+            }}
+          >
+            {feature.title}
+          </h3>
+        </div>
+
+        <p className="font-[family-name:var(--font-inter)] text-[20px] leading-[30px] text-[#475467]">
+          {feature.description}
+        </p>
+      </div>
+
+      <div
+        className="pointer-events-none absolute will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        style={
+          {
+            width: feature.phoneWidth,
+            height: feature.phoneHeight,
+            left: feature.phoneLeft,
+            bottom: feature.phoneBottom,
+            transform: `translateX(-50%) rotate(${rotate}deg) scale(${scale})`,
+            transformOrigin: "center center",
+          } as CSSProperties
+        }
+      >
+        <Image
+          src="/assets/iphone-mockup.png"
+          alt="iPhone mockup"
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function Features() {
   return (
     <section className="w-full px-[80px] pb-[96px]">
       <div className="relative mx-auto h-[2382px] max-w-[1280px]">
-        {features.map((f, i) => (
-          <div
-            key={i}
-            className="group absolute overflow-hidden rounded-[16px] p-[24px]"
-            style={{
-              backgroundColor: f.bg,
-              width: 628,
-              height: f.height,
-              left: f.position === "left" ? 0 : 652,
-              top: f.top,
-            }}
-          >
-            <div className="relative z-10 flex max-w-[560px] flex-col gap-[20px]">
-              <div className="flex items-center gap-[10px]">
-                <div className="relative h-[32px] w-[32px] shrink-0">
-                  <Image src={f.icon} alt="" fill />
-                </div>
-
-                <h3
-                  className="text-[36px] font-semibold leading-[44px] tracking-[-0.72px]"
-                  style={{
-                    fontFamily:
-                      "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
-                    color: f.color,
-                  }}
-                >
-                  {f.title}
-                </h3>
-              </div>
-
-              <p className="font-[family-name:var(--font-inter)] text-[20px] font-normal leading-[30px] text-[#475467]">
-                {f.description}
-              </p>
-            </div>
-
-            <div
-              className="pointer-events-none absolute transition-transform duration-300 ease-out will-change-transform group-hover:scale-[1.03]"
-              style={{
-                width: f.phoneWidth,
-                height: f.phoneHeight,
-                left: f.phoneLeft,
-                bottom: f.phoneBottom,
-                transform: `translateX(-50%) rotate(${f.phoneRotate}deg) scale(${f.phoneScale})`,
-                transformOrigin: "center center",
-              }}
-              onMouseEnter={undefined}
-            >
-              <Image
-                src="/assets/iphone-mockup.png"
-                alt="iPhone mockup"
-                fill
-                className="object-contain object-bottom"
-              />
-            </div>
-          </div>
+        {features.map((feature, index) => (
+          <FeatureCard key={index} feature={feature} />
         ))}
       </div>
     </section>

@@ -3,7 +3,7 @@ import Image from "next/image";
 const testimonials = [
   {
     row: 0,
-    text: "I am appreciative of the information offered. This given information can help understand some of the \"whys\" I have question to.",
+    text: 'I am appreciative of the information offered. This given information can help understand some of the "whys" I have question to.',
     initials: "KI",
     name: "Katie",
     flag: "/assets/flag-au.svg",
@@ -89,21 +89,28 @@ function StarRating() {
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
   return (
-    <div className="w-[453px] shrink-0 bg-white rounded-[12px] border border-[#eaecf0] p-[24px] flex flex-col justify-between" style={{ minHeight: 252 }}>
+    <div
+      className="w-[453px] shrink-0 bg-white rounded-[16px] border border-[#EAECF0] p-[24px] flex flex-col justify-between"
+      style={{ minHeight: 252 }}
+    >
       <div className="flex flex-col gap-[16px]">
         <StarRating />
-        <div className="bg-[#f9fafb] rounded-[8px] p-[16px]">
-          <p className="text-[14px] leading-[24px] text-[#475467] font-normal font-[family-name:var(--font-inter)]">
+        <div className="p-[16px]">
+          <p className="text-[14px] leading-[24px] text-[#475467] font-medium font-[family-name:var(--font-inter)]">
             {t.text}
           </p>
         </div>
       </div>
       <div className="flex items-center gap-[8px] mt-[16px]">
-        <div className="w-[44px] h-[44px] rounded-full bg-[#f2f4f7] flex items-center justify-center">
-          <span className="text-[14px] font-semibold text-[#475467]">{t.initials}</span>
+        <div className="w-[44px] h-[44px] rounded-full bg-[#F9F5FF] flex items-center justify-center">
+          <span className="text-[14px] font-semibold text-[#6941C6]">
+            {t.initials}
+          </span>
         </div>
         <div className="flex items-center gap-[8px]">
-          <span className="text-[14px] font-semibold text-[#101828] font-[family-name:var(--font-inter)]">{t.name}</span>
+          <span className="text-[14px] font-semibold text-[#101828] font-[family-name:var(--font-inter)]">
+            {t.name}
+          </span>
           <div className="relative w-[16px] h-[16px]">
             <Image src={t.flag} alt="" fill className="object-contain" />
           </div>
@@ -123,12 +130,24 @@ export default function Testimonials() {
         {/* Header */}
         <div className="flex flex-col items-center gap-[20px]">
           <div className="relative w-[32px] h-[32px]">
-            <Image src="/assets/hearts-icon.svg" alt="" fill />
+            <Image src="/assets/heart-icon.svg" alt="" fill />
           </div>
-          <h2 className="text-[36px] font-semibold text-center tracking-[-0.72px] leading-[44px]" style={{ fontFamily: "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif" }}>
+          <h2
+            className="text-[36px] font-semibold text-center tracking-[-0.72px] leading-[44px]"
+            style={{
+              fontFamily:
+                "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
+            }}
+          >
             <span className="text-[#101828]">Trusted by</span>
             <br />
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(176deg, #43CBFF 0%, #9708CC 100%)" }}>
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(176deg, #43CBFF 0%, #9708CC 100%)",
+              }}
+            >
               gamers
             </span>
             <span className="text-[#101828]"> around the world</span>
@@ -137,13 +156,13 @@ export default function Testimonials() {
 
         {/* Testimonial rows */}
         <div className="w-[calc(100%+604px)] -ml-[302px] flex flex-col gap-[24px]">
-          <div className="flex gap-[24px] justify-center pl-[50px]">
-            {row0.map((t, i) => (
+          <div className="flex w-max gap-[24px] animate-[marquee-left_40s_linear_infinite]">
+            {[...row0, ...row0].map((t, i) => (
               <TestimonialCard key={i} t={t} />
             ))}
           </div>
-          <div className="flex gap-[24px] justify-center -ml-[50px]">
-            {row1.map((t, i) => (
+          <div className="flex w-max gap-[24px] animate-[marquee-right_40s_linear_infinite]">
+            {[...row1, ...row1].map((t, i) => (
               <TestimonialCard key={i} t={t} />
             ))}
           </div>

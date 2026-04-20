@@ -196,8 +196,22 @@ export default function Hero() {
             </p>
           </div>
           <div className="relative w-fit">
-            <button className="inline-flex items-center justify-center gap-[16px] rounded-[8px] px-[24px] py-[16px] bg-[#7F56D9] text-white shadow-[0_12px_24px_rgba(16,24,40,0.08)] border-b-[3px] border-b-[#220A5580] transition-all duration-150 ease-out hover:bg-[#885EDF] hover:border-b-[#5833A680] hover:-translate-y-[2px] active:bg-[#8F68E1] active:border-b-0 active:translate-y-[6px]">
-              <span className="text-white font-semibold text-[18px] leading-[28px] font-[family-name:var(--font-inter)]">
+            <button
+              className="
+                inline-flex items-center justify-center
+                gap-[10px] px-[24px] py-[16px]
+                rounded-[8px]
+                bg-[#7F56D9] text-white
+                shadow-[0px_1px_2px_rgba(16,24,40,0.05),inset_0_-3px_0_0_rgba(34,10,85,0.5)]
+                transition-[transform,background-color,box-shadow] duration-150 ease-out
+                hover:bg-[#6941C6]
+                hover:shadow-[0px_1px_2px_rgba(16,24,40,0.05),inset_0_-3px_0_0_rgba(34,10,85,0.65)]
+                active:translate-y-[3px]
+                active:bg-[#6941C6]
+                active:shadow-[0px_1px_2px_rgba(16,24,40,0.05),inset_0_0_0_0_rgba(34,10,85,0.65)]
+              "
+            >
+              <span className="text-[18px] leading-[28px] font-semibold font-[family-name:var(--font-inter)]">
                 Get Started
               </span>
 
@@ -207,12 +221,6 @@ export default function Hero() {
             </button>
 
             <div className="pointer-events-none absolute left-[calc(100%-3px)] top-[55px] w-[71px] h-[42px] ]">
-              {/* <Image
-                src="/assets/hero-arrow.svg"
-                alt=""
-                fill
-                className="object-contain"
-              /> */}
               <HeroArrowLottie />
             </div>
           </div>
