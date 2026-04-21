@@ -109,11 +109,14 @@ const features = [
   },
 ];
 
-function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
+function DesktopFeatureCard({
+  feature,
+}: {
+  feature: (typeof features)[number];
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const rotate = isHovered ? feature.phoneRotate + 5 : feature.phoneRotate;
-
   const scale = isHovered ? feature.phoneScale + 0.05 : feature.phoneScale;
 
   return (
@@ -176,13 +179,85 @@ function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
   );
 }
 
+function MobileFeatureCard({
+  feature,
+}: {
+  feature: (typeof features)[number];
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const rotate = isHovered ? feature.phoneRotate + 5 : feature.phoneRotate;
+  const scale = isHovered ? 1.12 : 1.08;
+
+  return (
+    <div
+      className="relative overflow-hidden rounded-[16px] px-[20px] pt-[20px] pb-[180px]"
+      style={{ backgroundColor: feature.bg }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative z-10 flex flex-col gap-[16px]">
+        <div className="flex items-start gap-[10px]">
+          <div className="relative h-[28px] w-[28px] shrink-0">
+            <Image src={feature.icon} alt="" fill />
+          </div>
+
+          <h3
+            className="text-[24px] font-semibold leading-[32px] tracking-[-0.48px]"
+            style={{
+              fontFamily:
+                "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
+              color: feature.color,
+            }}
+          >
+            {feature.title}
+          </h3>
+        </div>
+
+        <p className="font-[family-name:var(--font-inter)] text-[16px] leading-[24px] text-[#475467]">
+          {feature.description}
+        </p>
+      </div>
+
+      <div
+        className="pointer-events-none absolute left-1/2 bottom-[-110px] h-[300px] w-[240px] will-change-transform transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        style={
+          {
+            transform: `translateX(-50%) rotate(${rotate}deg) scale(${scale})`,
+            transformOrigin: "center center",
+          } as CSSProperties
+        }
+      >
+        <Image
+          src="/assets/iphone-mockup.png"
+          alt="iPhone mockup"
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function Features() {
   return (
-    <section className="w-full px-[80px] pb-[96px]">
-      <div className="relative mx-auto h-[2382px] max-w-[1280px]">
-        {features.map((feature, index) => (
-          <FeatureCard key={index} feature={feature} />
-        ))}
+    <section className="w-full pb-[96px]">
+      {/* Mobile */}
+      <div className="block px-[16px] md:hidden">
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-[16px]">
+          {features.map((feature, index) => (
+            <MobileFeatureCard key={index} feature={feature} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden px-[80px] md:block">
+        <div className="relative mx-auto h-[2382px] max-w-[1280px]">
+          {features.map((feature, index) => (
+            <DesktopFeatureCard key={index} feature={feature} />
+          ))}
+        </div>
       </div>
     </section>
   );

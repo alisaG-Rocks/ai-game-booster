@@ -167,7 +167,7 @@ export default function Hero() {
   return (
     <section className="relative w-full px-[80px] pt-[96px] pb-[96px]">
       <BackgroundGridPattern />
-      <div className="relative flex items-start gap-[32px] max-w-[1280px] mx-auto">
+      <div className="relative flex-col-reverse md:flex-row flex items-start gap-[32px] max-w-[1280px] mx-auto">
         <div className="flex flex-col gap-[48px] w-[626px] shrink-0">
           <div className="flex flex-col gap-[24px]">
             <h1 className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-1.2px] text-[60px] leading-[72px]">
