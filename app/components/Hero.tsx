@@ -170,13 +170,7 @@ export default function Hero() {
       <div className="relative flex items-start gap-[32px] max-w-[1280px] mx-auto">
         <div className="flex flex-col gap-[48px] w-[626px] shrink-0">
           <div className="flex flex-col gap-[24px]">
-            <h1
-              className="text-[60px] font-semibold tracking-[-1.2px] leading-[72px]"
-              style={{
-                fontFamily:
-                  "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
-              }}
-            >
+            <h1 className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-1.2px] text-[60px] leading-[72px]">
               <span className="text-[#101828]">Cut your ping and </span>
               <br />
               <span

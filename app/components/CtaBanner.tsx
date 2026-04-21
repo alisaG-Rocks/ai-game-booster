@@ -15,7 +15,7 @@ export default function CtaBanner() {
         </div>
         <div className="relative flex flex-col gap-[16px] max-w-[768px] min-w-[480px] flex-1 z-10">
           <h2
-            className="text-[30px] font-semibold leading-[38px] text-white"
+            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-1.2px] text-[30px] leading-[38px] text-white"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",

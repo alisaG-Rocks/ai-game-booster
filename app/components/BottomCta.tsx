@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BottomCta() {
   return (
-    <section className="w-full bg-white pb-[96px]">
+    <section className="w-full bg-white pb-[96px] relative">
       <div
         className="relative max-w-[1280px] mx-auto rounded-[16px] overflow-hidden pt-[64px] pb-[84px] px-[32px] flex flex-col items-center gap-[32px]"
         style={{
@@ -32,7 +32,7 @@ export default function BottomCta() {
 
         <div className="relative z-10 flex flex-col items-center gap-[16px] max-w-[768px] text-center">
           <h2
-            className="text-[36px] font-semibold leading-[44px] tracking-[-0.72px] text-white"
+            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] leading-[44px] text-white"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
@@ -75,14 +75,16 @@ export default function BottomCta() {
             className="object-contain"
           />
         </div>
-        <div className="absolute bottom-[-30px] left-1/2 -translate-x-1/2 w-[77px] h-[121px] z-20">
-          <Image
-            src="/assets/rocket.png"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
+      </div>
+      <div className="absolute bottom-[50px] left-1/2 -translate-x-1/2 w-[77px] h-[121px] z-20">
+        <video
+          src="/assets/rocket.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover rounded-[50%]"
+        />
       </div>
     </section>
   );

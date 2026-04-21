@@ -16,8 +16,11 @@ const faqItems = [
   },
   {
     question: "Is HyperUp safe to use?",
-    answer:
-      "GearUP promises every user that we ONLY focus on your network connection optimization and NOTHING MORE. Our services do not interfere with any of your in-game performance and data, so please rest assured that you will NOT be detected or banned by the game by using GearUP. Also, we're collaborating with various game-related developers (BattlEye, Bluehole, SONY Playstation, etc.) and with approval from all the games we have in our collection. You can totally trust GearUP's service.",
+    answer: [
+      "GearUP promises every user that we ONLY focus on your network connection optimization and NOTHING MORE.",
+      "Our services do not interfere with any of your in-game performance and data, so please rest assured that you will NOT be detected or banned by the game by using GearUP.",
+      "Also, we're collaborating with various game-related developers (BattlEye, Bluehole, SONY Playstation, etc.) and with approval from all the games we have in our collection. You can totally trust GearUP's service.",
+    ],
   },
   {
     question: "How many games does HyperUp support?",
@@ -39,7 +42,7 @@ export default function FaqSection() {
       <div className="mx-auto flex max-w-[1280px] flex-wrap gap-[64px] px-[32px]">
         <div className="flex min-w-[480px] max-w-[768px] flex-1 flex-col gap-[20px]">
           <h2
-            className="text-[36px] font-semibold leading-[44px] tracking-[-0.72px] text-[#101828]"
+            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] leading-[44px] text-[#101828]"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
@@ -70,13 +73,7 @@ export default function FaqSection() {
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                 >
                   <div className="flex-1">
-                    <span
-                      className="block text-[18px] font-medium leading-[28px] text-[#101828]"
-                      style={{
-                        fontFamily:
-                          "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
-                      }}
-                    >
+                    <span className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold block text-[18px] font-medium leading-[28px] text-[#101828]">
                       {item.question}
                     </span>
 
@@ -88,9 +85,22 @@ export default function FaqSection() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] text-[#475467]">
-                          {item.answer}
-                        </p>
+                        <div className="flex flex-col gap-[16px]">
+                          {Array.isArray(item.answer) ? (
+                            item.answer.map((paragraph, index) => (
+                              <p
+                                key={index}
+                                className="font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] text-[#475467]"
+                              >
+                                {paragraph}
+                              </p>
+                            ))
+                          ) : (
+                            <p className="font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] text-[#475467]">
+                              {item.answer}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

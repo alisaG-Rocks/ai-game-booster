@@ -133,7 +133,7 @@ export default function Testimonials() {
             <Image src="/assets/heart-icon.svg" alt="" fill />
           </div>
           <h2
-            className="text-[36px] font-semibold text-center tracking-[-0.72px] leading-[44px]"
+            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] text-center leading-[44px]"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",

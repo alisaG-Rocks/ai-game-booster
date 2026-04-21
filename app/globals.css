@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/fonts/SF-Pro-Rounded-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sf-pro-rounded:
+    "SF Pro Rounded", "SF Pro Display", -apple-system, sans-serif;
 }
 
 @theme inline {
