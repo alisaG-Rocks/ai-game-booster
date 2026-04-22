@@ -1,7 +1,8 @@
 import React from "react";
+import { SplashScreen } from "../components/Quiz/SplashScreen";
 
 const Quiz = () => {
-  return <div>Quiz</div>;
+  return <SplashScreen />;
 };
 
 export default Quiz;
