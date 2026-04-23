@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BottomCta() {
   return (
@@ -47,7 +48,8 @@ export default function BottomCta() {
           </p>
         </div>
 
-        <button
+        <Link
+          href="/quiz"
           className="
             relative z-10 inline-flex items-center justify-center
             gap-[10px] px-[24px] py-[16px]
@@ -64,10 +66,10 @@ export default function BottomCta() {
           <div className="relative h-[24px] w-[24px] rotate-90">
             <Image src="/assets/chevron-cta.svg" alt="" fill />
           </div>
-        </button>
+        </Link>
 
         {/* Bottom wave + rocket */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[269px] h-[71px] -scale-y-100">
+        <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-[269px] h-[71px] -scale-y-100">
           <Image
             src="/assets/cta-wave.svg"
             alt=""
@@ -76,7 +78,7 @@ export default function BottomCta() {
           />
         </div>
       </div>
-      <div className="absolute bottom-[50px] left-1/2 -translate-x-1/2 w-[77px] h-[121px] z-20">
+      <div className="absolute bottom-[40px] left-1/2 -translate-x-1/2 w-[77px] h-[121px] z-20">
         <video
           src="/assets/rocket.mp4"
           autoPlay

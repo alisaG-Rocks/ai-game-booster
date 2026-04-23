@@ -125,15 +125,15 @@ export default function Testimonials() {
   const row1 = testimonials.filter((t) => t.row === 1);
 
   return (
-    <section className="w-full bg-white pb-[96px] px-[80px] overflow-hidden">
-      <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-[64px]">
+    <section className="w-full bg-white py-[44px] md:pb-[96px] md:pt-0 px-[80px] overflow-hidden">
+      <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-[44px] md:gap-[64px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-[20px]">
           <div className="relative w-[32px] h-[32px]">
             <Image src="/assets/heart-icon.svg" alt="" fill />
           </div>
           <h2
-            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] text-center leading-[44px]"
+            className="font-[family-name:var(--font-sf-pro-rounded)] text-[32px] leading-[40px] font-semibold tracking-[-1.2px] md:text-[36px] text-center md:leading-[44px]"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
@@ -155,13 +155,13 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial rows */}
-        <div className="w-[calc(100%+604px)] -ml-[302px] flex flex-col gap-[24px]">
-          <div className="flex w-max gap-[24px] animate-[marquee-left_40s_linear_infinite]">
+        <div className="w-[calc(100%+604px)] -ml-[302px] flex flex-col gap-[16px] md:gap-[24px]">
+          <div className="flex w-max gap-[16px] md:gap-[24px] animate-[marquee-left_40s_linear_infinite]">
             {[...row0, ...row0].map((t, i) => (
               <TestimonialCard key={i} t={t} />
             ))}
           </div>
-          <div className="flex w-max gap-[24px] animate-[marquee-right_40s_linear_infinite]">
+          <div className="flex w-max gap-[16px] md:gap-[24px] animate-[marquee-right_40s_linear_infinite]">
             {[...row1, ...row1].map((t, i) => (
               <TestimonialCard key={i} t={t} />
             ))}

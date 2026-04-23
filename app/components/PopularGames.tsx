@@ -51,10 +51,10 @@ function GameBlock({ top, bottom }: { top: string; bottom: string }) {
 
 export default function PopularGames() {
   return (
-    <section className="w-full bg-white py-[96px]">
+    <section className="w-full bg-white py-[44px] md:py-[96px]">
       <div className="flex flex-col items-center gap-[44px]">
         <div className="max-w-[1280px] mx-auto px-[32px]">
-          <h2 className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] text-center leading-[44px]">
+          <h2 className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-1.2px] text-[36px] text-center leading-[44px]">
             <span className="text-[#101828]">Worldwide </span>
             <span
               className="bg-clip-text text-transparent"

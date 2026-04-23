@@ -241,7 +241,7 @@ function MobileFeatureCard({
 
 export default function Features() {
   return (
-    <section className="w-full pb-[96px]">
+    <section className="w-full py-[44px] md:pb-[96px] md:pt-0">
       {/* Mobile */}
       <div className="block px-[16px] md:hidden">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-[16px]">
