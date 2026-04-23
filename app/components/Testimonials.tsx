@@ -90,7 +90,7 @@ function StarRating() {
 function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
   return (
     <div
-      className="w-[453px] shrink-0 bg-white rounded-[16px] border border-[#EAECF0] p-[24px] flex flex-col justify-between"
+      className="w-[335px] md:w-[453px] shrink-0 bg-white rounded-[16px] border border-[#EAECF0] p-[16px] md:p-[24px] flex flex-col justify-between"
       style={{ minHeight: 252 }}
     >
       <div className="flex flex-col gap-[16px]">
@@ -125,7 +125,7 @@ export default function Testimonials() {
   const row1 = testimonials.filter((t) => t.row === 1);
 
   return (
-    <section className="w-full bg-white py-[44px] md:pb-[96px] md:pt-0 px-[80px] overflow-hidden">
+    <section className="w-full bg-white py-[44px] md:pb-[96px] md:pt-0 px-[80px] overflow-hidden" id="reviews">
       <div className="max-w-[1280px] mx-auto flex flex-col items-center gap-[44px] md:gap-[64px]">
         {/* Header */}
         <div className="flex flex-col items-center gap-[20px]">

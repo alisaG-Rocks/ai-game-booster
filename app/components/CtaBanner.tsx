@@ -18,18 +18,18 @@ export default function CtaBanner() {
         <div className="relative z-10 flex w-full max-w-[768px] flex-col items-center gap-[16px] md:min-w-[480px] md:flex-1 md:items-start">
           <h2 className="font-[family-name:var(--font-sf-pro-rounded)] text-[30px] font-semibold leading-[38px] text-white">
             No Disconnects. No
-            <br />
+            <br className="md:hidden" />
             Lag. Just Crisp,
-            <br />
-            Seamless Gameplay
+            <br className="md:hidden" />
+            {" "}Seamless Gameplay
           </h2>
 
           <p className="font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] text-[#E9D7FE] md:text-[20px] md:leading-[30px]">
             Every match — a new record. HeperUp
-            <br />
+            <br className="md:hidden" />
             learns from your sessions
-            <br />
-            and gets faster every day.
+            <br className="md:hidden" />
+            {" "}and gets faster every day.
           </p>
         </div>
 

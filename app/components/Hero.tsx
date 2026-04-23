@@ -5,7 +5,7 @@ import Link from "next/link";
 function BackgroundGridPattern() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute left-1/2 top-0 h-[1440px] w-[1920px] -translate-x-1/2 opacity-[0.1]">
+      <div className="absolute left-1/2 top-0 h-[1440px] w-[1920px] -translate-x-1/2 opacity-[0.3]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/bg-grid-vertical.svg"
@@ -220,7 +220,7 @@ function DesktopHero() {
               </div>
             </Link>
 
-            <div className="pointer-events-none absolute left-[calc(100%-3px)] top-[55px] h-[42px] w-[71px]">
+            <div className="pointer-events-none absolute left-[calc(100%-3px)] top-[30px] h-[42px] w-[71px]">
               <HeroArrowLottie />
             </div>
           </div>

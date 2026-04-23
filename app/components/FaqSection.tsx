@@ -38,11 +38,11 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full bg-white pb-[96px]">
+    <section className="w-full bg-white py-[44px] md:pb-[96px] md:pt-0" id="faq">
       <div className="mx-auto flex max-w-[1280px] flex-wrap gap-[64px] px-[32px]">
-        <div className="flex min-w-[480px] max-w-[768px] flex-1 flex-col gap-[20px]">
+        <div className="flex min-w-[335px] max-w-[768px] flex-1 flex-col gap-[20px]">
           <h2
-            className="font-[family-name:var(--font-sf-pro-rounded)] font-semibold tracking-[-0.72px] text-[36px] leading-[44px] text-[#101828]"
+            className="font-[family-name:var(--font-sf-pro-rounded)] text-[32px] leading-[40px] font-semibold tracking-[-1.2px] md:text-[36px] md:leading-[44px] text-[#101828]"
             style={{
               fontFamily:
                 "'SF Pro Rounded', 'SF Pro Display', -apple-system, sans-serif",
@@ -51,19 +51,19 @@ export default function FaqSection() {
             FAQs
           </h2>
 
-          <p className="font-[family-name:var(--font-inter)] text-[18px] font-normal leading-[28px] text-[#475467]">
+          <p className="font-[family-name:var(--font-inter)] text-[16px] md:text-[18px] leading-[24px] font-normal md:leading-[28px] text-[#475467]">
             Everything you need to know about the product and billing.
           </p>
         </div>
 
-        <div className="flex min-w-[480px] flex-1 flex-col gap-[16px]">
+        <div className="flex min-w-[335px] flex-1 flex-col gap-[16px]">
           {faqItems.map((item, i) => {
             const isOpen = openIndex === i;
 
             return (
               <div
                 key={i}
-                className={`rounded-[16px] px-[24px] py-[16px] transition-colors duration-300 ${
+                className={`rounded-[16px] px-[16px] py-[12px] md:px-[24px] md:py-[16px] transition-colors duration-300 ${
                   isOpen ? "bg-[#F9FAFB]" : "bg-transparent"
                 }`}
               >
