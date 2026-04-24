@@ -21,6 +21,7 @@ const features = [
     phoneBottom: -200,
     phoneRotate: -32,
     phoneScale: 1.5,
+    mobileHeight: 370,
   },
   {
     icon: "/assets/icon-tap.svg",
@@ -38,6 +39,7 @@ const features = [
     phoneBottom: -200,
     phoneRotate: 32,
     phoneScale: 1.5,
+    mobileHeight: 370,
   },
   {
     icon: "/assets/icon-game.svg",
@@ -55,6 +57,7 @@ const features = [
     phoneBottom: -200,
     phoneRotate: 0,
     phoneScale: 1.5,
+    mobileHeight: 370,
   },
   {
     icon: "/assets/icon-global.svg",
@@ -72,6 +75,7 @@ const features = [
     phoneBottom: -100,
     phoneRotate: -16,
     phoneScale: 1.5,
+    mobileHeight: 440,
   },
   {
     icon: "/assets/icon-shield.svg",
@@ -89,6 +93,7 @@ const features = [
     phoneBottom: -75,
     phoneRotate: 0,
     phoneScale: 1.5,
+    mobileHeight: 440,
   },
   {
     icon: "/assets/icon-stats.svg",
@@ -106,6 +111,7 @@ const features = [
     phoneBottom: -100,
     phoneRotate: 16,
     phoneScale: 1.5,
+    mobileHeight: 440,
   },
 ];
 
@@ -192,7 +198,7 @@ function MobileFeatureCard({
   return (
     <div
       className="relative overflow-hidden rounded-[16px] px-[20px] pt-[20px] pb-[180px]"
-      style={{ backgroundColor: feature.bg }}
+      style={{ backgroundColor: feature.bg, height: feature.mobileHeight }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

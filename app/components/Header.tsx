@@ -28,7 +28,7 @@ function DesktopHeader() {
         </div>
 
         <div className="flex items-center gap-[12px]">
-          <button className="rounded-[8px] px-[16px] py-[10px] text-[16px] font-semibold leading-[24px] text-[#475467]">
+          <button className="rounded-[8px] px-[16px] py-[10px] text-[16px] font-semibold leading-[24px] text-[#475467] hover:bg-[#F9FAFB] transition-[background-color] duration-150 ease-out">
             Log in
           </button>
 

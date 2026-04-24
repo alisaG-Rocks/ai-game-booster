@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 type GameOption = {
   id: string;
@@ -44,15 +44,10 @@ const games: GameOption[] = [
 ];
 
 export default function ChooseGamePage() {
-  const router = useRouter();
   const [selectedGame, setSelectedGame] = useState<string | null>(null);
 
   const handleSelect = (gameId: string) => {
     setSelectedGame(gameId);
-
-    setTimeout(() => {
-      router.push("/quiz/choose-region");
-    }, 150);
   };
 
   return (
@@ -108,20 +103,22 @@ export default function ChooseGamePage() {
             </div>
           </div>
 
-          <div className="mt-6 space-y-3">
+          <div className="mt-6 space-y-3 max-w-[328px] mx-auto">
             {games.map((game) => {
               const isSelected = selectedGame === game.id;
 
               return (
-                <button
+                <Link
+                  href="/quiz/choose-region"
                   key={game.id}
                   type="button"
                   onClick={() => handleSelect(game.id)}
                   className={[
                     "flex w-full items-center gap-2 rounded-[12px] border border-[#E0E3E9] border-b-[3px] bg-white px-3 py-3 text-left transition-all duration-150",
                     "hover:border-[#7F56D9]",
+                    "active:border-b-[1px]",
                     isSelected
-                      ? "border-[#7F56D9] ring-1 ring-[#7C3AED]"
+                      ? "border-[#7F56D9] border-b-[1px]"
                       : "border-[#E0E3E9]",
                   ].join(" ")}
                 >
@@ -137,7 +134,7 @@ export default function ChooseGamePage() {
                   <span className="text-[16px] font-semibold text-[#101828]">
                     {game.label}
                   </span>
-                </button>
+                </Link>
               );
             })}
           </div>

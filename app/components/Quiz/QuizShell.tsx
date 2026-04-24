@@ -23,7 +23,7 @@ export function QuizShell({ children }: PropsWithChildren) {
         {/* {progress > 0 ? <QuizProgress value={progress} /> : null} */}
 
         <main className="flex flex-1 items-center justify-center">
-          <div className="w-full max-w-md">{children}</div>
+          <div className="w-full">{children}</div>
         </main>
       </div>
     </div>

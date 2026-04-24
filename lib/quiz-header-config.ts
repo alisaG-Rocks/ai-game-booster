@@ -9,20 +9,18 @@ export const quizHeaderConfig: Record<string, QuizHeaderConfig> = {
   "/quiz/choose-game": {
     showBackButton: false,
     showProgress: false,
-    currentStep: 1,
-    totalSteps: 3,
   },
   "/quiz/choose-region": {
     showBackButton: true,
     showProgress: true,
-    currentStep: 2,
-    totalSteps: 3,
+    currentStep: 1,
+    totalSteps: 2,
   },
   "/quiz/choose-problem": {
     showBackButton: true,
     showProgress: true,
-    currentStep: 3,
-    totalSteps: 3,
+    currentStep: 2,
+    totalSteps: 2,
   },
   "/quiz/analyzing": {
     showBackButton: false,

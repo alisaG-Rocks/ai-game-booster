@@ -92,7 +92,12 @@ export function QuizHeader({
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#98A2B3] transition hover:bg-black/5"
                 aria-label="Go back"
               >
-                {/* <ChevronLeft className="h-5 w-5" /> */}Back
+                <Image
+                  src="/assets/arrow-left.svg"
+                  width={24}
+                  height={24}
+                  alt="back button"
+                />
               </button>
             ) : null}
           </div>
